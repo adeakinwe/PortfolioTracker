@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "CFzs80eeadFYhf0bZB5TMpF7MXIZV9fIdB/9dSIn6mY=",
+  "Source": "PortfolioTracker.API",
+  "BasePath": "_content/PortfolioTracker.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
