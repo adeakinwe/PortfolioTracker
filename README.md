@@ -1,6 +1,10 @@
-# Create Project
+# Create Solution
 dotnet --version
-dotnet new webapi -n PortfolioTracker.Api
+dotnet new sln -n PortfolioTracker
+
+# Create API project
+dotnet new webapi -n PortfolioTracker.Api --framework net8.0
+dotnet sln add PortfolioTracker.API/PortfolioTracker.API.csproj
 
 # Add Packages
 dotnet add package Microsoft.EntityFrameworkCore --version=8.0.3
@@ -19,6 +23,13 @@ dotnet run
 # Migrations
 dotnet ef migrations add initmigration
 dotnet ef database update 
+
+# Add Tests
+dotnet new xunit -n PortfolioTracker.Tests --framework net8.0
+dotnet sln add PortfolioTracker.Tests/PortfolioTracker.Tests.csproj
+dotnet add PortfolioTracker.Tests reference PortfolioTracker.API
+
+dotnet test
 
 # Publish
 dotnet publish -c Release
