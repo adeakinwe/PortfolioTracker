@@ -354,8 +354,13 @@ A WITHDRAWAL transaction shall:
 
 ### Financial Precision and Currency
 
-* Monetary values, including transaction amounts and unit prices, shall use
-  decimal values with two decimal places.
+* Monetary values, including transaction amounts and current asset unit prices,
+  shall use decimal values with two decimal places.
+* For BUY and SELL transactions, Amount shall be calculated as `Quantity ×
+  UnitPrice` and rounded to two decimal places using round-half-up semantics.
+  This is the MVP rounding rule. For example, a Quantity of `3` and UnitPrice
+  of `10.125` produces a raw Amount of `30.375` and a rounded Amount of
+  `30.38`.
 * Unit quantities shall use decimal values with up to six decimal places.
 * The MVP uses one implicit currency only. Multi-currency support and currency
   conversion are out of scope.
